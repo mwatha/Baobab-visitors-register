@@ -1,0 +1,8 @@
+--- 
+cwd: /var/www/mateme/current/
+log_file: /var/www/mateme/current/log/mongrel.log
+port: 8000
+environment: production
+address: 127.0.0.1
+pid_file:  /var/www/mateme/current/tmp/pids/mongrel.pid
+servers: 3 

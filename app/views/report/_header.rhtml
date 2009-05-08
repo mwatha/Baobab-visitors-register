@@ -1,0 +1,37 @@
+<style>
+body{
+  font-family: "Nimbus Sans L", "Arial Narrow", sans-serif;
+}
+div.title{
+  font-size:25px;
+  background-color: lightgray;
+}
+button{
+  font-size:25px;
+  height:40px;
+  display:inline;
+  margin:-10px;
+}
+td.values{
+  text-align: right;
+}
+tr.header{
+  background-color: lightgray;
+  font-weight: bold;
+}
+table{
+  width: 100%;
+}
+.valueCol {
+	float: right;
+  padding-right:20;
+}
+</style>
+<div class="title">
+  <%= "#{controller.action_name.humanize.titleize} for #{Location.current_location.name} between #{@start_date.strftime("%d/%m/%y")} and #{@end_date.strftime("%d/%m/%y")}" -%>
+</div>
+<div style="position:absolute;top:10px;right:10px;">
+<button onmousedown="javascript:history.go(-2)">Finish</button>
+<!--button onmousedown="popupBox()">Update</button-->
+</div>
+

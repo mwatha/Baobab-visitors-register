@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag "patient_details" %>
+<div id="details" class="scrollable" style="float:left;">
+  <%= render :partial => "details" %>
+  <hr noshade style="color: #cccccc"/>
+</div>
+<div style="float:right">
+  <div id="menu">
+    <%= link_to "Menu", "/" %>
+  </div>
+  <div id="appointment">
+    <!--%= link_to "Appointment", :controller => :encounters, :action => :new, :id => "appointment", :patient_id => @patient.id %-->
+  </div>
+  <div id="print">
+    <%= link_to "Print Label", :action => :print, :id => @patient.id %>
+  </div>
+</div>
+
+
+<!-- Do stuff like show observations or link to forms that we could render for this patient to capture observations -->
+
+

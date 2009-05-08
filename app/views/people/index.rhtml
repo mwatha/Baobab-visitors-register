@@ -1,0 +1,29 @@
+<div class="left">
+ Scan patient barcode:
+    <form id='barcodeForm' action="/people/search">
+      <%= text_field_tag :identifier, '', {:id => 'barcode'} %>
+    </form>
+    <%= javascript_include_tag "barcode" %>
+</br>
+      Summary for <%= Date.today.strftime("%d %b %Y") %>:<br/>
+        <table class="patient_information">
+        <% Encounter.count_by_type_for_date(Date.today).each{|type,total| 
+           type = "Visitors registered/seen" if type == "REGISTRATION"
+           type = "patients referred to other clinics" if type == "REFERRED"
+        %>
+          <tr><td><%= type.upcase %>:</td><td><%= total %></td></tr>
+        <% } %>
+        </table>
+</div>
+
+
+<div class="right">
+<table class="buttons">
+    <%= link_to_onmousedown_in_tr_td "Find or register people", {:action => "search"}  %>
+    <!--%= link_to_onmousedown_in_tr_td "View reports", {:controller => "report", :action => 'select'}  %-->
+    <%= link_to_onmousedown_in_tr_td "Administration", {:controller =>"user",:action => "user_menu"}  if @show_user_management %>
+    <div><!--%= link_to_onmousedown_in_tr_td "Change user", { :controller => "user", :action => "logout"}, :style => "background-color: tomato", :id => "logout" %--></div>
+</table>
+</div>
+</div>
+

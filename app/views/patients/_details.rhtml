@@ -1,0 +1,7 @@
+<div style="font-size: 16pt;">
+<%= @patient.person.name %><br/></br>
+<b><i>Visitor id:</i></b> <%=@patient.national_id_with_dashes rescue "" %><br/>
+<b><i>Occupation:</i></b> <%=@patient.get_identifier("Occupation")  rescue "" %><br/>
+<b><i>Email address:</i></b> <%= @patient.person.addresses.first.address1 rescue 'Unknown'%></br>
+<b><i>Work place:</i></b> <%= @patient.person.addresses.first.city_village rescue 'Unknown' %><br/>
+</div>

@@ -1,0 +1,43 @@
+#overlay {
+  -moz-opacity:0.4;
+  background:green;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:800px;
+  height:600px;    
+  z-index:1000;
+}
+#calibrate {
+  -moz-opacity:1;
+  position:absolute;
+  left:0;
+  top:0;
+  width:800px;
+  height:600px; 
+  z-index:998;   
+}
+#calibrate_hit_target {
+  background:white;
+  border:1px solid silver;
+  position:absolute;
+  width:20px;
+  height:20px; 
+  z-index:999;   
+}
+#overlay_debug {
+  -moz-opacity:1;
+  background:blue;
+  position:absolute;
+  left:500px;
+  top:400px;
+  z-index:1000;
+}
+#overlay_cursor {
+  -moz-opacity:1;
+  background:red url('/images/smirk.gif');
+  position:absolute;
+  z-index:1001;
+  width:16px;
+  height:16px;
+}
